@@ -31,7 +31,7 @@ public class ConvertUtil {
 				//String ffmpeg_home = base+"tools/ffmpeg/ffmpeg.exe";//ffmpeg.exe所放的路径  
 				//String nginx_url = properties.getProperty("nginx_url").trim(); 
 				//String inputFile_home = properties.getProperty("inputFile_home").trim(); 
-				String inputFile_home = "F:/nginx-rtmp-win32-master/html/hls/"; 
+				String inputFile_home = "F:/apache-tomcat-7.0.78/webapps/HlsTool/hls/"; 
 	    		String ffmpeg_home = base+"tools/ffmpeg/ffmpeg.exe";//ffmpeg.exe所放的路径  
 	    		//String mencoder_home = base+"tools/mencoder/mencoder.exe";//mencoder.exe所放的路径  
 				File file = new File(inputFile_home+name);
@@ -62,11 +62,11 @@ public class ConvertUtil {
 				
 				//second
                 commend.add("-i");    
-                commend.add("rtsp://admin:ld123456@192.168.1.63:554/h264/ch1/main/av_stream");   
-                //commend.add("E:/wukong.flv");   
+                //commend.add("rtsp://admin:ld123456@192.168.1.63:554/h264/ch1/main/av_stream");   
+                commend.add("E:/wukong.flv");   
                 commend.add("-vcodec");
-                commend.add("copy");
-                //commend.add("libx264");//flv 需解码
+                //commend.add("copy");
+                commend.add("libx264");//flv 需解码
                 //commend.add("libx264 -s 1920x1080");
                 commend.add("-acodec");
                 commend.add("copy");
@@ -112,13 +112,13 @@ public class ConvertUtil {
 	            InputStreamReader isr = new InputStreamReader(stderr);  
 	            BufferedReader br = new BufferedReader(isr);  
 	            String line = null;  
-	            System.out.println("<ERROR>");  
+	            System.out.println("<LOGGER>");  
 	            while ((line = br.readLine()) != null){  
 	                System.out.println(line);  
 	            }  
-	            System.out.println("</ERROR>");  
+	            System.out.println("</LOGGER>");  
 	            int exitVal = proc.waitFor();  
-	            System.out.println("Process exitValue: " + exitVal);
+	            System.out.println("进程退出状态: " + exitVal);
 	          
 			
 			} catch (Exception e) {
