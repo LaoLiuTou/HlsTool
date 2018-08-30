@@ -1,0 +1,38 @@
+<html>  
+  <head>  
+  <title>视频直播</title>  
+  <meta charset="utf-8">  
+</head>  
+<body>  
+  <div id="playercontainer"></div>
+<script type="text/javascript" src="js/cyberplayer.js"></script>
+<script type="text/javascript">
+    var player = cyberplayer("playercontainer").setup({
+        width: 640,
+        height: 480,
+        title: "点播--直播",
+        file: "http://192.168.1.144/HlsTool/hls/test/test.m3u8", // hls播放地址（×一定要支持跨域访问，否则要设置primary参数）
+        image: "http://gcqq450f71eywn6bv7u.exp.bcevod.com/mda-hiup6h1qdymgf3fe/mda-hiup6h1qdymgf3fe.jpg", // 视频截图
+        autostart: false,
+        playRate: true, // 默认h5播放器有倍速功能，如不需要，可以设置为false
+        // 可配置倍速值数组，格式如下所示
+        playRateConfig: [
+            {label: "×1"},
+            {label: "×2"},
+            {label: "×3"},
+            {label: "×4"},
+        ],
+        stretching: "uniform",
+        repeat: false,
+        volume: 100,
+        controls: true,
+        starttime: 0, 
+        // primary: "flash", // 强制使用flash来播放，不设置的话则默认高优使用H5进行播放
+        ak: "xxxxxxxxxxxxxxxx"
+    });
+</script>
+ 
+ 
+ 
+</body>  
+</html>  
